@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    
+    //creation of a simple function with no args and execute a function
+
+    function simpleFn() { // function definition
+        console.log("I am a Simple Function");
+    }
+
+    simpleFn(); // function execution
+
+
+    //creation of a simple function with args
+    function argsFn(name) {
+        console.log(" Hello " + name + " Good Evening");
+    }
+
+    argsFn("Naveen");
+
+
+    // executing a function with less number of params
+    function lessArgs(name, address) {
+        console.log("Hello " + name + " Your are from " + address);
+    }
+
+    lessArgs("Naveen", "Hyderabad");
+
+
+    //executing a function with more number of params
+    function moreFnArgs(name,age) {
+        console.log("Hello " + name + " your age is "+ age);
+    }
+
+    moreFnArgs("abc" ,"hyderabad" , 25); // 25 ignored
+
+    //function overloading is not possible here
+
+
+    // functions with return values
+    function greet(name) {
+        return "Hello " + name + " Good Evening ";
+    }
+
+    console.log(greet("Naveen"));
+
+
+
+    //function with empty return /no return
+    function noReturn(name){
+        return;
+    }
+
+    // function Expressions with name and execution
+
+
+    var functionExpr = function getName() {
+        console.log("I am Function Expression");
+    };
+
+    functionExpr();
+
+
+
+
+    // Anonymous Function Expression and execution
+    var anonymousFn = function () {
+        console.log("Iam Anonymous Function Expression");
+    };
+
+    anonymousFn();
+
+    var anonymousFn = function (name) {
+        console.log(name + " Iam Anonymous Function Expression");
+    };
+
+    anonymousFn("with Args");
+
+
+    // Functions as arguments without args
+    var myFn1 = function () {
+        console.log("Functions as arguments 1");
+    };
+
+    var myFn2 = function () {
+        console.log("Functions as arguments 2");
+    };
+
+    var executor = function (somFn) {
+        somFn();
+    };
+
+    executor(myFn1);
+    executor(myFn2);
+
+
+
+    // Functions as arguments with args
+    var myFn = function (name) {
+        console.log("Hello " + name);
+    };
+
+    var exec = function (someFn, name) {
+        //myFn("NAVEEN");
+        someFn(name);
+    };
+
+    exec(myFn, "NAVEEN");
+
+
+    // Functions in Objects and Execution
+    var employee = {
+        name:"John",
+        age:35,
+        salary:function () {
+            console.log("Salary inside Employee Object");
+        }
+    };
+
+    console.log(employee);
+
+    console.log(employee.salary()); // execution 
+
+
+    // this keyword for accessing object's props in function
+    var mySelf = {
+        firstName:"Naveen",
+        lastName:"Saggam",
+        getFullName:function () {
+            console.log(this.firstName + " " + this.lastName);
+        }
+    };
+
+    var mySelf2 = mySelf; // Assigning "mySelf" to "mySelf2"
+    mySelf = {}; //Assigning "mySelf" to empty object
+
+    console.log(mySelf2.firstName); //Naveen
+    console.log(mySelf2.getFullName()); // Naveen Saggam
+
+
+    // Coding Exercise 1
+    /*
+    Create an employee obj and address object in it.
+    add a property called isFromState() to return true
+    if a person from that state.
+     */
+
+    var employee1 = {
+        name:"abc",
+        age:25,
+        address : {
+            state: "Telangana",
+            country:"India"
+        },
+        isFromState: function (state) {
+            return this.address.state === state;
+        }
+    };
+
+    console.log(employee1.isFromState("Telangana")); // true
+
+
+    // Default Function Arguments (arguments)
+
+    function sum() {
+        var sum = 0;
+        for(var i=0; i<arguments.length ; i++){
+            sum += arguments[i];
+        }
+        console.log(sum);
+    }
+
+    sum(10,20,30,40,50);
+    sum(10,20);
+    sum(10,20,30);
+
+
+</script>
+</html>

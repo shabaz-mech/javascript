@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+
+<script>
+    //creation of objects
+
+    //Adding properties to objects
+
+    //Retrieving properties of objects
+
+    //declaring Object Literals
+
+    //Access existing properties
+
+    //Access Non Existing Properties
+
+    // Usage of Dot and [] notations
+
+    // use of [] notation where dot is not used for invalid identifiers
+
+    // use of [] notation for accessing dynamic properties
+
+
+    // nested Objects creation
+
+    var employee = {
+        name: "abcd",
+        age: 30,
+        address : {
+            state: "Telangana",
+            country: "India"
+        }
+    };
+
+    console.log(employee);
+
+    //Accessing them using dot notation
+    console.log(employee.address.state);
+
+
+    //Accessing them using mix of dot and [] notation
+    console.log(employee.address["state"]);
+
+    // Add some properties to nested object and access them
+    employee.address.pincode = 500001;
+
+
+    // === operator demo for objects (if pointing to same location in memory)
+    var employee1 = {
+        name:"naveen",
+        age:29
+    };
+
+    var employee2 = {
+        name:"naveen",
+        age:29
+    };
+
+    if(employee1 === employee2){
+        console.log("Both are equal");
+    }
+    else{
+        console.log("Not Equal");
+    }
+
+
+
+    var employee3 = {
+        name:"John",
+        age:30,
+        salary:null
+    };
+
+
+
+
+    /* revisiting undefined vs null for objects
+     if no property -> undefined
+     if exists and with value null -> null  */
+
+
+
+    // deleting a property from an object
+
+
+
+</script>
+</html>

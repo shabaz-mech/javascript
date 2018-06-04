@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Scopes</title>
+</head>
+<body>
+
+</body>
+
+<script>
+
+    // functions recap
+
+    // Scopes introduction
+
+    // Block scoping
+
+
+    //---------
+
+    var name = "Naveen";
+    if(name === "Naveen"){
+        var department = "Engineering";
+    }
+    console.log(name);
+    console.log(department);
+
+    // Function Scoping
+    var name = "Naveen";
+    function allocateDepartment() {
+        if(name === "Naveen"){
+            var department = "Engineering";
+        }
+    }
+    allocateDepartment();
+    console.log(name);
+    console.log(department);
+
+
+
+    // coding exercises
+
+    // 1) output ?
+
+    var top = 20;
+    function something() {
+        var inner = 30;
+        console.log(inner);
+    }
+
+    // 2) output ?
+    var top = 20;
+    function something() {
+        var inner = 30;
+        console.log(inner);
+    }
+    something();
+
+    // 3) output ?
+    var top = 20;
+    var inner = 50;
+    function something() {
+        var inner = 30;
+        console.log(inner);
+    }
+    something();
+
+    // 4) output ?
+
+    var top = 20;
+    var inner = 50;
+    function something() {
+        var inner = 30;
+    }
+    something();
+    console.log(inner);
+
+    // 6) output ?
+    var name = "Naveen";
+    function greet(name) {
+        console.log("Hello " + name);
+    }
+
+    greet("John");
+
+    //  IIFE example
+
+    //Immediatly Invoked Function Expression
+
+    function sum() {
+        var a = 10;
+        var b = 20;
+        var sum = a + b;
+        console.log(sum);
+    }
+
+    sum();
+
+    (function() {
+        var a = 20;
+        var b = 20;
+        var sum = a + b;
+        console.log(sum);
+    })();
+
+    // Read and Write Operations for variables
+
+    // Read and Write Operations for Functions
+
+
+
+
+
+
+</script>
+</html>

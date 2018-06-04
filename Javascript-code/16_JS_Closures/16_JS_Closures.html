@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Closures</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Closures Example 1 (calling inner() inside outer)
+
+    var a = 10;
+    function outer() {
+        var b = 20;
+        function  inner() {
+            console.log(a);
+            console.log(b);
+        }
+        inner();
+    }
+    outer();
+
+    // Closures Example 2
+
+    var a = 10;
+    function outer() {
+        var b = 10;
+        var inner = function () {
+            console.log(a);
+            console.log(b);
+        };
+        return inner;
+    }
+    var innerFn = outer();
+    innerFn();
+
+    // Closures Example 3
+
+        var a = 10;
+
+        function outer() {
+            var b = 20;
+            var inner = function () {
+                a++;
+                b++;
+                console.log(a);
+                console.log(b);
+            };
+            return inner;
+        }
+
+        var innerFn1 = outer();
+        innerFn1(); // 11 , 21
+        var innerFn2 = outer();
+        innerFn2(); // 12 , 21
+
+        // Closures in Callbacks
+        var a = 10;
+        var myFn = function () {
+            console.log(a);
+        };
+
+        setTimeout(myFn,1000); // callback function
+        console.log("Done");
+
+        // The Module Pattern Intro in JS
+
+        var personObj = {
+            "firstName":"Naveen",
+            "lastName":"Saggam",
+            "getFirstName": function () {
+                return this.firstName;
+            },
+            "getLastName":function () {
+                return this.lastName;
+            }
+        };
+        console.log(personObj);
+
+        // Module Pattern
+        function createPerson() {
+            var personObj = {
+                "firstName":"Naveen",
+                "lastName":"Saggam",
+                "getFirstName": function () {
+                    return this.firstName;
+                },
+                "getLastName":function () {
+                    return this.lastName;
+                }
+            };
+            return personObj;
+        }
+
+        var person = createPerson(); // access the person obj now
+
+        console.log(person.firstName);
+
+        // Module Pattern
+    function createPerson() {
+        var firstName = "Naveen";
+        var lastName = "Saggam";
+
+        var personObj = {
+
+            "getFirstName": function () {
+                return firstName;
+            },
+            "getLastName":function () {
+                return lastName;
+            },
+            "setFirstName":function (name) {
+                firstName = name;
+            },
+            "setLastName" : function (name) {
+                lastName = name;
+            }
+        };
+        return personObj;
+    }
+
+    var person = createPerson(); // access the person obj now
+
+    console.log(person.firstName);//undefined
+    console.log(person.getFirstName()); // Naveen
+
+    // Module pattern with Setter Methods
+
+    function createPerson() {
+        var firstName = "Naveen";
+        var lastName = "Saggam";
+
+        var personObj = {
+
+            "getFirstName" : function () {
+                return firstName;
+            },
+            "getLastName" : function () {
+                return lastName;
+            },
+            "setFirstName" : function (name) {
+                firstName = name;
+            },
+            "setLastName" : function (name) {
+                lastName = name;
+            }
+        };
+        return personObj;
+    }
+
+    var person = createPerson(); // access the person obj now
+
+    console.log(person.firstName);//undefined
+    console.log(person.getFirstName()); // Naveen
+    person.setFirstName("John");
+    console.log(person.getFirstName()); // John
+
+
+</script>
+</html>

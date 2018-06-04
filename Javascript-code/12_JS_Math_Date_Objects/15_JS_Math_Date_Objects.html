@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    /*
+        Math Object Examples
+
+     */
+
+    // Math PI and Sqrt
+    var pi  = Math.PI;
+    console.log(pi);
+
+    var sqrt = Math.sqrt(16);
+    console.log(sqrt);
+
+    // find the min of 4 numbers
+    var min = Math.min(10,20,30,40);
+    console.log(min);
+
+    // find the Max of 4 numbers
+    var max = Math.max(10,20,30,40);
+    console.log(max);
+
+    // find the 'x' to the power of 'y' value, ex: 2^4
+    var power = Math.pow(2,4);
+    console.log(power);
+
+
+    // generate the random numbers from 0 to 100
+    console.log(Math.round(Math.random()*100));
+
+    /* For more details about Math Object, please have a look at
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+    */
+
+    /*
+        Date Object Examples
+
+     */
+
+    // get today's date
+    var today = new Date();
+    console.log(today);
+
+    //get date of the month 0 - 31 getDate()
+    var date = today.getDate();
+    console.log(date);
+
+    //get day of the week 0 - 6 getDay()
+    var day = today.getDay();
+    console.log(day);
+
+    // get full day of the week using switch statement
+    var fullDay = "";
+    switch (day){
+        case 0:
+            fullDay = "Sunday";
+            break;
+        case 1:
+            fullDay = "Monday";
+            break;
+        case 2:
+            fullDay = "Tuesday";
+            break;
+        case 3:
+            fullDay = "Wednesday";
+            break;
+        case 4:
+            fullDay = "Thursday";
+            break;
+        case 5:
+            fullDay = "Friday";
+            break;
+        case 6:
+            fullDay = "Saturday";
+            break;
+       default:
+            fullDay = "unKnown";
+            break;
+    }
+    console.log(fullDay);
+
+    /* For More Details about Date() please have a look at
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+    */
+
+</script>
+</html>
